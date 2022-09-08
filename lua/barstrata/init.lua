@@ -13,14 +13,14 @@ local set_terminal_colors = function()
   vim.g.terminal_color_5 = c.magenta
   vim.g.terminal_color_6 = c.cyan
   vim.g.terminal_color_7 = c.white
-  vim.g.terminal_color_8 = c.bright_black
-  vim.g.terminal_color_9 = c.bright_red
-  vim.g.terminal_color_10 = c.bright_green
-  vim.g.terminal_color_11 = c.bright_yellow
-  vim.g.terminal_color_12 = c.bright_blue
-  vim.g.terminal_color_13 = c.bright_magenta
-  vim.g.terminal_color_14 = c.bright_cyan
-  vim.g.terminal_color_15 = c.bright_white
+  vim.g.terminal_color_8 = c.black
+  vim.g.terminal_color_9 = c.red
+  vim.g.terminal_color_10 = c.green
+  vim.g.terminal_color_11 = c.yellow
+  vim.g.terminal_color_12 = c.blue
+  vim.g.terminal_color_13 = c.magenta
+  vim.g.terminal_color_14 = c.cyan
+  vim.g.terminal_color_15 = c.white
   vim.g.terminal_color_background = c.bg
   vim.g.terminal_color_foreground = c.fg
 end
@@ -40,9 +40,9 @@ local set_groups = function()
     Cursor = { fg = c.cyan, bg = c.none, style = "reverse" }, -- the character under the cursor
     CursorIM = { fg = c.cyan, bg = c.none, style = "reverse" }, -- like Cursor, but used when in IME mode
     Directory = { fg = c.blue, bg = c.none, style = "bold" }, -- directory names (and other special names in listings)
-    DiffAdd = { fg = c.bright_green, bg = c.none, style = "reverse" }, -- diff mode: Added line
-    DiffChange = { fg = c.bright_blue, bg = c.none, style = "reverse" }, --  diff mode: Changed line
-    DiffDelete = { fg = c.bright_red, bg = c.none, style = "reverse" }, -- diff mode: Deleted line
+    DiffAdd = { fg = c.green, bg = c.none, style = "reverse" }, -- diff mode: Added line
+    DiffChange = { fg = c.blue, bg = c.none, style = "reverse" }, --  diff mode: Changed line
+    DiffDelete = { fg = c.red, bg = c.none, style = "reverse" }, -- diff mode: Deleted line
     DiffText = { fg = c.fg, bg = c.none, style = "reverse" }, -- diff mode: Changed text within a changed line
     ErrorMsg = { fg = c.red }, -- error messages
     Folded = { fg = c.gray05, bg = c.none, style = "italic" },
@@ -50,7 +50,7 @@ local set_groups = function()
     IncSearch = { style = "reverse" },
     LineNr = { fg = c.gray05 },
     CursorLineNr = { fg = c.gray06 },
-    MatchParen = { fg = c.bright_cyan, style = "bold" },
+    MatchParen = { fg = c.cyan, style = "bold" },
     ModeMsg = { fg = c.cyan, style = "bold" },
     MoreMsg = { fg = c.cyan, style = "bold" },
     NonText = { fg = c.gray03 },
@@ -129,7 +129,7 @@ local set_groups = function()
     Error = { fg = c.red, bg = c.none, style = "bold,underline" }, -- any erroneous construct
     Todo = { fg = c.cyan, bg = c.none, style = "bold,italic" }, -- anything that needs extra attention; mostly the keywords TODO FIXME and XXX
     -- HTML
-    htmlArg = { fg = c.bright_blue, style = "italic" },
+    htmlArg = { fg = c.blue, style = "italic" },
     htmlBold = { fg = c.pink, bg = c.none, style = "bold" },
     htmlEndTag = { fg = c.fg },
     htmlstyle = { fg = c.cyan, bg = c.none, style = "italic" },
@@ -189,8 +189,8 @@ local set_groups = function()
     TSException = { fg = c.blue }, -- For exception related keywords.
     TSField = { fg = c.blue }, -- For fields.
     TSFloat = { fg = c.pink }, -- For floats.
-    TSFunction = { fg = c.bright_blue, style = cfg.function_style }, -- For fuction (calls and definitions).
-    TSFuncBuiltin = { fg = c.bright_blue, style = cfg.function_style }, -- For builtin functions: `table.insert` in Lua.
+    TSFunction = { fg = c.blue, style = cfg.function_style }, -- For fuction (calls and definitions).
+    TSFuncBuiltin = { fg = c.blue, style = cfg.function_style }, -- For builtin functions: `table.insert` in Lua.
     TSFuncMacro = { fg = c.blue }, -- For macro defined fuctions (calls and definitions): each `macro_rules` in Rust.
     TSInclude = { fg = c.blue, style = "italic" }, -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
     TSKeyword = { fg = c.blue, style = cfg.keyword_style }, -- For keywords that don't fall in previous categories.
@@ -198,7 +198,7 @@ local set_groups = function()
     TSKeywordOperator = { fg = c.gray06 }, -- For operators that are English words, e.g. `and`, `as`, `or`.
     TSKeywordReturn = { fg = c.blue, style = cfg.keyword_style }, -- For the `return` and `yield` keywords.
     TSLabel = { fg = c.cyan }, -- For labels: `label:` in C and `:label:` in Lua.
-    TSMethod = { fg = c.bright_blue, style = cfg.function_style }, -- For method calls and definitions.
+    TSMethod = { fg = c.blue, style = cfg.function_style }, -- For method calls and definitions.
     TSNamespace = { fg = c.blue }, -- For identifiers referring to modules and namespaces.
     -- TSNone = {}, -- No highlighting. Don't change the values of this highlight group.
     TSNumber = { fg = c.pink }, -- For all numbers
@@ -216,7 +216,7 @@ local set_groups = function()
     TSStringSpecial = { fg = c.pink }, -- For strings with special meaning that don't fit into the above categories.
     TSSymbol = { fg = c.pink }, -- For identifiers referring to symbols or atoms.
     TSTag = { fg = c.cyan }, -- Tags like html tag names.
-    TSTagAttribute = { fg = c.bright_blue, style = "italic" }, -- For html tag attributes.
+    TSTagAttribute = { fg = c.blue, style = "italic" }, -- For html tag attributes.
     TSTagDelimiter = { fg = c.gray06 }, -- Tag delimiter like `<` `>` `/`
     TSText = { fg = c.pink }, -- For strings considered text in a markup language.
     TSStrong = { fg = c.pink, style = "bold" }, -- For text to be represented in bold.
@@ -229,7 +229,7 @@ local set_groups = function()
     TSMath = { fg = c.blue }, -- For LaTeX-like math environments.
     TSTextReference = { fg = c.red }, -- For footnotes, text references, citations.
     TSEnvironment = { fg = c.blue }, -- For text environments of markup languages.
-    TSEnvironmentName = { fg = c.bright_blue }, -- For the name/the string indicating the type of text environment.
+    TSEnvironmentName = { fg = c.blue }, -- For the name/the string indicating the type of text environment.
     TSNote = { fg = c.blue, style = "italic" }, -- Text representation of an informational note.
     TSWarning = { fg = c.yellow, style = "italic" }, -- Text representation of a warning note.
     TSDanger = { fg = c.red, style = "italic" }, -- Text representation of a danger note.
@@ -277,32 +277,37 @@ local set_groups = function()
     LspTroubleCount = { fg = c.pink, bg = c.gray03 },
     LspTroubleNormal = { fg = c.fg, bg = c.bg },
     -- Diff
-    diffAdded = { fg = c.bright_green },
-    diffRemoved = { fg = c.bright_red },
-    diffChanged = { fg = c.bright_blue },
+    diffAdded = { fg = c.green },
+    diffRemoved = { fg = c.red },
+    diffChanged = { fg = c.blue },
     diffOldFile = { fg = c.gray04 },
     diffNewFile = { fg = c.fg },
     diffFile = { fg = c.gray05 },
     diffLine = { fg = c.cyan },
     diffIndexLine = { fg = c.pink },
     -- GitSigns
-    GitSignsAdd = { fg = c.bright_green }, -- diff mode: Added line |diff.txt|
-    GitSignsAddNr = { fg = c.bright_green }, -- diff mode: Added line |diff.txt|
-    GitSignsAddLn = { fg = c.bright_green }, -- diff mode: Added line |diff.txt|
-    GitSignsChange = { fg = c.bright_yellow }, -- diff mode: Changed line |diff.txt|
-    GitSignsChangeNr = { fg = c.bright_yellow }, -- diff mode: Changed line |diff.txt|
-    GitSignsChangeLn = { fg = c.bright_yellow }, -- diff mode: Changed line |diff.txt|
-    GitSignsDelete = { fg = c.bright_red }, -- diff mode: Deleted line |diff.txt|
-    GitSignsDeleteNr = { fg = c.bright_red }, -- diff mode: Deleted line |diff.txt|
-    GitSignsDeleteLn = { fg = c.bright_red }, -- diff mode: Deleted line |diff.txt|
+    GitSignsAdd = { fg = c.green }, -- diff mode: Added line |diff.txt|
+    GitSignsAddNr = { fg = c.green }, -- diff mode: Added line |diff.txt|
+    GitSignsAddLn = { fg = c.green }, -- diff mode: Added line |diff.txt|
+    GitSignsChange = { fg = c.yellow }, -- diff mode: Changed line |diff.txt|
+    GitSignsChangeNr = { fg = c.yellow }, -- diff mode: Changed line |diff.txt|
+    GitSignsChangeLn = { fg = c.yellow }, -- diff mode: Changed line |diff.txt|
+    GitSignsDelete = { fg = c.red }, -- diff mode: Deleted line |diff.txt|
+    GitSignsDeleteNr = { fg = c.red }, -- diff mode: Deleted line |diff.txt|
+    GitSignsDeleteLn = { fg = c.red }, -- diff mode: Deleted line |diff.txt|
     -- Telescope
-    TelescopeSelectionCaret = { fg = c.bright_blue, bg = c.gray03 },
-    TelescopeBorder = { fg = c.gray05 },
-    TelescopePromptBorder = { fg = c.blue },
-    TelescopeResultsBorder = { fg = c.gray06 },
-    TelescopePreviewBorder = { fg = c.gray05 },
+    TelescopeNormal = {bg=c.gray02},
+    TelescopeBorder = { fg = c.gray02 },
+    TelescopeSelectionCaret = { fg = c.blue, bg = c.gray03 },
     TelescopeMatching = { fg = c.red },
-    TelescopePromptPrefix = { fg = c.bright_blue },
+    TelescopePromptNormal = { bg = c.gray03 },
+    TelescopePromptTitle = { fg = c.magenta},
+    TelescopePromptPrefix = { fg = c.blue },
+    TelescopePromptBorder = { fg = c.gray03, bg = c.gray03 },
+    TelescopePreviewTitle = { fg = c.magenta},
+    TelescopePreviewBorder = { fg = c.gray02, bg = c.gray02},
+    TelescopeResultsTitle = { fg = c.magenta, bg = c.gray02 },
+    TelescopeResultsBorder = { fg = c.gray02, bg = c.gray02},
     -- NvimTree
     NvimTreeRootFolder = { fg = c.cyan, style = "italic" },
     NvimTreeNormal = { fg = c.fg, bg = cfg.transparent and c.none or c.bg },
@@ -310,8 +315,8 @@ local set_groups = function()
     NvimTreeExecFile = { fg = c.green },
     NvimTreeSpecialFile = { fg = c.pink },
     NvimTreeFolderName = { fg = c.blue },
-    NvimTreeOpenedFolderName = { fg = c.bright_blue },
-    NvimTreeOpenedFile = { fg = c.bright_blue },
+    NvimTreeOpenedFolderName = { fg = c.blue },
+    NvimTreeOpenedFile = { fg = c.blue },
     NvimTreeEmptyFolderName = { fg = c.gray05 },
     NvimTreeFolderIcon = { fg = c.gray06 },
     NvimTreeIndentMarker = { fg = c.gray03 },
@@ -331,7 +336,7 @@ local set_groups = function()
     ALEVirtualTextWarning = { fg = c.yellow },
     ALEVirtualTextInfo = { fg = c.blue },
     -- WhichKey
-    WhichKey = { fg = c.bright_cyan },
+    WhichKey = { fg = c.cyan },
     WhichKeyGroup = { fg = c.magenta, style = "italic" },
     WhichKeyDesc = { fg = c.blue },
     WhichKeySeperator = { fg = c.gray05 },
@@ -346,7 +351,7 @@ local set_groups = function()
     TargetWord = { fg = c.cyan },
     ReferencesCount = { fg = c.gray06 },
     DefinitionCount = { fg = c.gray06 },
-    TargetFileName = { fg = c.bright_blue },
+    TargetFileName = { fg = c.blue },
     DefinitionIcon = { fg = c.gray06 },
     ReferencesIcon = { fg = c.gray06 },
     ProviderTruncateLine = { fg = c.gray05 },
@@ -384,8 +389,8 @@ local set_groups = function()
     IndentBlanklineContextChar = { fg = c.gray05 },
     -- nvim-cmp
     CmpItemAbbrDeprecated = { fg = c.gray05, style = "strikethrough" },
-    CmpItemAbbrMatch = { fg = c.bright_blue },
-    CmpItemAbbrMatchFuzzy = { fg = c.bright_blue },
+    CmpItemAbbrMatch = { fg = c.blue },
+    CmpItemAbbrMatchFuzzy = { fg = c.blue },
     CmpItemKindVariable = { fg = c.blue },
     CmpItemKindInterface = { fg = c.blue },
     CmpItemKindText = { fg = c.blue },
@@ -395,21 +400,21 @@ local set_groups = function()
     CmpItemKindProperty = { fg = c.fg },
     CmpItemKindUnit = { fg = c.fg },
     -- mini.nvim
-    MiniStatuslineModeNormal = { fg = c.bg, bg = c.bright_cyan },
-    MiniStatuslineModeInsert = { fg = c.bg, bg = c.bright_blue },
-    MiniStatuslineModeVisual = { fg = c.bg, bg = c.bright_magenta },
-    MiniStatuslineModeReplace = { fg = c.bg, bg = c.bright_yellow },
-    MiniStatuslineModeCommand = { fg = c.bg, bg = c.bright_green },
+    MiniStatuslineModeNormal = { fg = c.bg, bg = c.cyan },
+    MiniStatuslineModeInsert = { fg = c.bg, bg = c.blue },
+    MiniStatuslineModeVisual = { fg = c.bg, bg = c.magenta },
+    MiniStatuslineModeReplace = { fg = c.bg, bg = c.yellow },
+    MiniStatuslineModeCommand = { fg = c.bg, bg = c.green },
     MiniStatuslineModeOther = { fg = c.gray05, bg = c.gray01 },
     MiniStatuslineDevInfo = { fg = c.fg, bg = c.gray02 },
     MiniStatuslineFilename = { fg = c.fg, bg = c.gray01 },
     MiniStatuslineFileinfo = { fg = c.fg, bg = c.gray02 },
     MiniStatuslineInactive = { fg = c.gray05, bg = c.gray01 },
-    MiniTablineCurrent = { fg = c.bg, bg = c.bright_cyan },
-    MiniTablineVisible = { fg = c.bg, bg = c.bright_magenta },
+    MiniTablineCurrent = { fg = c.bg, bg = c.cyan },
+    MiniTablineVisible = { fg = c.bg, bg = c.magenta },
     MiniTablineHidden = { fg = c.gray05, bg = c.gray02 },
-    MiniTablineModifiedCurrent = { fg = c.bg, bg = c.bright_cyan },
-    MiniTablineModifiedVisible = { fg = c.bg, bg = c.bright_magenta },
+    MiniTablineModifiedCurrent = { fg = c.bg, bg = c.cyan },
+    MiniTablineModifiedVisible = { fg = c.bg, bg = c.magenta },
     MiniTablineModifiedHidden = { fg = c.gray05, bg = c.gray02 },
     MiniTablineFill = { bg = c.gray01 },
     MiniCursorword = { style = "underline" },
@@ -417,15 +422,15 @@ local set_groups = function()
     MiniTrailspace = { bg = c.red },
     MiniCompletionActiveParameter = { style = "underline" },
     MiniJump = { style = "reverse" },
-    MiniStarterCurrent = { fg = c.bright_cyan },
+    MiniStarterCurrent = { fg = c.cyan },
     MiniStarterFooter = { fg = c.gray06 },
-    MiniStarterHeader = { fg = c.bright_blue },
+    MiniStarterHeader = { fg = c.blue },
     MiniStarterInactive = { fg = c.gray06 },
     MiniStarterItem = { fg = c.fg, bg = c.gray01 },
     MiniStarterItemBullet = { bg = c.gray01 },
     MiniStarterItemPrefix = { style = "underline" },
-    MiniStarterSelection = { fg = c.bright_magenta },
-    MiniStarterQuery = { fg = c.bright_magenta },
+    MiniStarterSelection = { fg = c.magenta },
+    MiniStarterQuery = { fg = c.magenta },
     -- Custom highlight groups for use in statusline plugins
     StatusLineNormalMode = { fg = c.black, bg = c.gray02 },
     StatusLineInsertMode = { fg = c.black, bg = c.gray03 },
@@ -439,7 +444,7 @@ local set_groups = function()
     -- Hydra
     HydraRed = { fg = c.red },
     HydraBlue = { fg = c.blue },
-    HydraAmaranth = { fg = c.bright_red },
+    HydraAmaranth = { fg = c.red },
     HydraTeal = { fg = c.cyan },
     HydraPink = { fg = c.magenta },
     HydraHint = { fg = c.fg, bg = c.gray02 },
