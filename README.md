@@ -1,6 +1,6 @@
-# 🏔 Substrata
+# 🏔 Barstrata
 
-A cold, dark color scheme for Neovim written in Lua ported from [vim-substrata](https://github.com/arzg/vim-substrata) theme.
+A cold, dark color scheme for Neovim written in Lua ported from [vim-barstrata](https://github.com/arzg/vim-barstrata) theme.
 
 ## ✨ Features
 
@@ -42,13 +42,13 @@ Install the theme with your preferred package manager:
 [vim-plug](https://github.com/junegunn/vim-plug)
 
 ```vim
-Plug 'kvrohit/substrata.nvim'
+Plug 'kvrohit/barstrata.nvim'
 ```
 
 [packer](https://github.com/wbthomason/packer.nvim)
 
 ```lua
-use 'kvrohit/substrata.nvim'
+use 'kvrohit/barstrata.nvim'
 ```
 
 ## 🚀 Usage
@@ -57,47 +57,48 @@ Enable the colorscheme:
 
 ```lua
 -- Lua
-vim.cmd [[colorscheme substrata]]
+vim.cmd [[colorscheme barstrata]]
 ```
 
 ```vim
 " Vim Script
-colorscheme substrata
+colorscheme barstrata
 ```
 
 ## ⚙️ Configuration
 
-> Configuration needs to be set **BEFORE** loading the color scheme with `colorscheme substrata`
+> Configuration needs to be set **BEFORE** loading the color scheme with `colorscheme barstrata`
 
 | Option                     | Default   | Description              |
 | -------------------------- | --------- | ------------------------ |
-| substrata_italic_comments  | `true`    | Make comments italic     |
-| substrata_italic_keywords  | `false`   | Make keywords italic     |
-| substrata_italic_booleans  | `false`   | Make booleans italic     |
-| substrata_italic_functions | `false`   | Make functions italic    |
-| substrata_italic_variables | `false`   | Make variables italic    |
-| substrata_transparent      | `false`   | Disable background color |
-| substrata_variant          | `default` | Colorscheme variant      |
+| barstrata_italic_comments  | `true`    | Make comments italic     |
+| barstrata_italic_keywords  | `false`   | Make keywords italic     |
+| barstrata_italic_booleans  | `false`   | Make booleans italic     |
+| barstrata_italic_functions | `false`   | Make functions italic    |
+| barstrata_italic_variables | `false`   | Make variables italic    |
+| barstrata_italic_types     | `false`   | Make types italic        |
+| barstrata_transparent      | `false`   | Disable background color |
+| barstrata_variant          | `default` | Colorscheme variant      |
 
 ```lua
 -- Example config in lua
-vim.g.substrata_italic_functions = true
+vim.g.barstrata_italic_functions = true
 
 -- Load the colorscheme
-vim.cmd [[colorscheme substrata]]
+vim.cmd [[colorscheme barstrata]]
 ```
 
 ```vim
 " Example config in Vim Script
-let g:substrata_italic_functions = 1
+let g:barstrata_italic_functions = 1
 
 " Load the colorscheme
-colorscheme substrata
+colorscheme barstrata
 ```
 
 ```vim
 " Setting brighter colorscheme variant
-let g:substrata_variant = "brighter"
+let g:barstrata_variant = "brighter"
 ```
 
 ## Preview
@@ -136,16 +137,16 @@ let g:substrata_variant = "brighter"
 
 ## ☑️ Extras
 
-- Eclipse color theme: `extras/eclipse/substrata.xml`
-- Gnome Terminal color theme: `extras/gnome-terminal/substrata.sh`
-- iTerm2 color theme: `extras/iterm2/substrata.itermcolors`
-- Konsole color theme: `extras/konsole/substrata.colorscheme`
-- WezTerm color theme: `extras/wezterm/colors/Substrata.toml`
-- kitty color theme: `extras/kitty/substrata.conf`
-- Alacritty color theme: `extras/alacritty/substrata.yaml`
+- Eclipse color theme: `extras/eclipse/barstrata.xml`
+- Gnome Terminal color theme: `extras/gnome-terminal/barstrata.sh`
+- iTerm2 color theme: `extras/iterm2/barstrata.itermcolors`
+- Konsole color theme: `extras/konsole/barstrata.colorscheme`
+- WezTerm color theme: `extras/wezterm/colors/Barstrata.toml`
+- kitty color theme: `extras/kitty/barstrata.conf`
+- Alacritty color theme: `extras/alacritty/barstrata.yaml`
 
 ## 👍 Credits
 
-- The original authors of the excellent [vim-substrata](https://github.com/arzg/vim-substrata) theme.
+- The original authors of the excellent [vim-barstrata](https://github.com/arzg/vim-barstrata) theme.
 - Lua plugin derived from [neon](https://github.com/rafamadriz/neon) and influenced by [tokyonight.nvim](https://github.com/folke/tokyonight.nvim).
 - Gnome terminal, Konsole and iTerm2 colors exported from [terminal.sexy](http://terminal.sexy).

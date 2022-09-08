@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
-# Substrata - Gnome Terminal color scheme install script
+# Barstrata - Gnome Terminal color scheme install script
 
-[[ -z "$PROFILE_NAME" ]] && PROFILE_NAME="Substrata"
-[[ -z "$PROFILE_SLUG" ]] && PROFILE_SLUG="Substrata"
+[[ -z "$PROFILE_NAME" ]] && PROFILE_NAME="Barstrata"
+[[ -z "$PROFILE_SLUG" ]] && PROFILE_SLUG="Barstrata"
 [[ -z "$DCONF" ]] && DCONF=dconf
 [[ -z "$UUIDGEN" ]] && UUIDGEN=uuidgen
 
