@@ -8,11 +8,7 @@ A cold, dark color scheme for Neovim written in Lua forked from [kvrohit/substra
 - Terminal colors inside Neovim
 - Color themes for terminals:
   - `alacritty`
-  - `gnome-terminal`
-  - `iterm2`
-  - `kitty`
-  - `konsole`
-  - `wezterm`
+
 
 ### Plugin Support
 
