@@ -97,7 +97,7 @@ local set_groups = function()
     StorageClass = { fg = c.cyan }, -- static, register, volatile, etc.
     Structure = { fg = c.pink }, -- struct, union, enum, etc.
     Constant = { fg = c.pink }, -- any constant
-    Comment = { fg = c.gray05, bg = c.none, style = cfg.comment_style }, -- italic comments
+    Comment = { fg = c.gray04, bg = c.none, style = cfg.comment_style }, -- italic comments
     Conditional = { fg = c.blue, bg = c.none, style = cfg.keyword_style }, -- italic if, then, else, endif, switch, etc.
     Keyword = { fg = c.blue, bg = c.none, style = cfg.keyword_style }, -- italic for, do, while, etc.
     Repeat = { fg = c.blue, bg = c.none, style = cfg.keyword_style }, -- italic any other keyword
@@ -193,7 +193,7 @@ local set_groups = function()
     TSFuncBuiltin = { fg = c.blue, style = cfg.function_style }, -- For builtin functions: `table.insert` in Lua.
     TSFuncMacro = { fg = c.blue }, -- For macro defined fuctions (calls and definitions): each `macro_rules` in Rust.
     TSInclude = { fg = c.blue, style = "italic" }, -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
-    TSKeyword = { fg = c.blue, style = cfg.keyword_style }, -- For keywords that don't fall in previous categories.
+    TSKeyword = { fg = c.bright_pink , style = cfg.keyword_style }, -- For keywords that don't fall in previous categories.
     TSKeywordFunction = { fg = c.blue, style = cfg.function_style }, -- For keywords used to define a fuction.
     TSKeywordOperator = { fg = c.gray06 }, -- For operators that are English words, e.g. `and`, `as`, `or`.
     TSKeywordReturn = { fg = c.blue, style = cfg.keyword_style }, -- For the `return` and `yield` keywords.
@@ -209,7 +209,7 @@ local set_groups = function()
     TSPunctDelimiter = { fg = c.gray06 }, -- For delimiters ie: `.`
     TSPunctBracket = { fg = c.gray06 }, -- For brackets and parens.
     TSPunctSpecial = { fg = c.pink }, -- For special punctutation that does not fall in the catagories before.
-    TSRepeat = { fg = c.blue, style = cfg.keyword_style }, -- For keywords related to loops.
+    TSRepeat = { fg = c.bright_pink, style = cfg.keyword_style }, -- For keywords related to loops.
     TSString = { fg = c.cyan }, -- For strings.
     TSStringRegex = { fg = c.blue }, -- For regexes.
     TSStringEscape = { fg = c.magenta }, -- For escape characters within a string.
@@ -237,10 +237,12 @@ local set_groups = function()
     TSTypeBuiltin = { fg = c.cyan, style = cfg.type_style }, -- For builtin types.
     TSVariable = { fg = c.fg, style = cfg.variable_style }, -- Any variable name that does not have another highlight.
     TSVariableBuiltin = { fg = c.pink, style = cfg.variable_style }, -- Variable names that are defined by the languages, like `this` or `self`.
+
     -- highlight groups for the native LSP client
     LspReferenceText = { fg = c.bg, bg = c.pink }, -- used for highlighting "text" references
     LspReferenceRead = { fg = c.bg, bg = c.pink }, -- used for highlighting "read" references
     LspReferenceWrite = { fg = c.bg, bg = c.pink }, -- used for highlighting "write" references
+
     -- Diagnostics
     DiagnosticError = { fg = c.urgent_red }, -- base highlight group for "Error"
     DiagnosticWarn = { fg = c.urgent_yellow }, -- base highlight group for "Warning"
@@ -250,6 +252,7 @@ local set_groups = function()
     DiagnosticUnderlineWarn = { fg = c.urgent_yellow, style = "undercurl", sp = c.urgent_yellow }, -- used to underline "Warning" diagnostics.
     DiagnosticUnderlineInfo = { fg = c.urgent_green, style = "undercurl", sp = c.urgent_green }, -- used to underline "Information" diagnostics.
     DiagnosticUnderlineHint = { fg = c.urgent_blue, style = "undercurl", sp = c.urgent_blue }, -- used to underline "Hint" diagnostics.
+
     -- Diagnostics (old)
     LspDiagnosticsDefaultError = { fg = c.red }, -- used for "Error" diagnostic virtual text
     LspDiagnosticsSignError = { fg = c.red }, -- used for "Error" diagnostic signs in sign column
@@ -271,6 +274,7 @@ local set_groups = function()
     LspDiagnosticsFloatingHint = { fg = c.cyan, style = "bold" }, -- used for "Hint" diagnostic messages in the diagnostics float
     LspDiagnosticsVirtualTextHint = { fg = c.cyan, style = "bold" }, -- Virtual text "Hint"
     LspDiagnosticsUnderlineHint = { fg = c.cyan, style = "undercurl", sp = c.cyan }, -- used to underline "Hint" diagnostics.
+
     -- Plugins highlight groups
     -- LspTrouble
     LspTroubleText = { fg = c.gray04 },
