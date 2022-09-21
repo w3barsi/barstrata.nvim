@@ -3,6 +3,7 @@ local M = {}
 M.default = {
   -- Basic
   bg = "#191c25",
+  bg2 = "#24262E",
   fg = "#ffffff",
 
   -- Normal
@@ -14,7 +15,7 @@ M.default = {
   magenta = "#c6aed7",
   cyan = "#7dc2c7",
   white = "#ffffff",
-  bright_cyan = "#5de4c7",
+  teal = "#5de4c7",
   bright_pink = "#f087bd",
   bright_magenta = "#d0679d",
 
