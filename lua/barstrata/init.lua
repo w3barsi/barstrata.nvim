@@ -75,7 +75,7 @@ local set_groups = function()
     TablineSel = { fg = c.bg, bg = c.blue },
     Tabline = { fg = c.gray05 },
     Title = { fg = c.cyan, bg = c.none, style = "bold" },
-    Visual = { fg = c.none, bg = c.gray03 },
+    Visual = { fg = c.bg, bg = c.bright_magenta },
     VisualNOS = { fg = c.none, bg = c.gray03 },
     WarningMsg = { fg = c.yellow, style = "bold" },
     WildMenu = { fg = c.bg, bg = c.blue, style = "bold" },
@@ -184,7 +184,7 @@ local set_groups = function()
     TSConstant = { fg = c.fg }, -- For constants
     TSConstBuiltin = { fg = c.pink, style = "italic" }, -- For constants that are built in the language: `nil` in Lua.
     TSConstMacro = { fg = c.cyan }, -- For constants that are defined by macros: `NULL` in C.
-    TSConstructor = { fg = c.gray07 }, -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
+    TSConstructor = { fg = c.bright_pink }, -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
     TSError = { fg = c.red }, -- For syntax/parser errors.
     TSException = { fg = c.blue }, -- For exception related keywords.
     TSField = { fg = c.blue }, -- For fields.
@@ -193,8 +193,8 @@ local set_groups = function()
     TSFuncBuiltin = { fg = c.blue, style = cfg.function_style }, -- For builtin functions: `table.insert` in Lua.
     TSFuncMacro = { fg = c.blue }, -- For macro defined fuctions (calls and definitions): each `macro_rules` in Rust.
     TSInclude = { fg = c.blue, style = "italic" }, -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
-    TSKeyword = { fg = c.bright_pink , style = cfg.keyword_style }, -- For keywords that don't fall in previous categories.
-    TSKeywordFunction = { fg = c.blue, style = cfg.function_style }, -- For keywords used to define a fuction.
+    TSKeyword = { fg = c.bright_pink, style = cfg.keyword_style }, -- For keywords that don't fall in previous categories.
+    TSKeywordFunction = { fg = c.gray06, style = cfg.function_style }, -- For keywords used to define a fuction.
     TSKeywordOperator = { fg = c.gray06 }, -- For operators that are English words, e.g. `and`, `as`, `or`.
     TSKeywordReturn = { fg = c.blue, style = cfg.keyword_style }, -- For the `return` and `yield` keywords.
     TSLabel = { fg = c.cyan }, -- For labels: `label:` in C and `:label:` in Lua.
@@ -215,7 +215,7 @@ local set_groups = function()
     TSStringEscape = { fg = c.magenta }, -- For escape characters within a string.
     TSStringSpecial = { fg = c.pink }, -- For strings with special meaning that don't fit into the above categories.
     TSSymbol = { fg = c.pink }, -- For identifiers referring to symbols or atoms.
-    TSTag = { fg = c.cyan }, -- Tags like html tag names.
+    TSTag = { fg = c.bright_pink }, -- Tags like html tag names.
     TSTagAttribute = { fg = c.blue, style = "italic" }, -- For html tag attributes.
     TSTagDelimiter = { fg = c.gray06 }, -- Tag delimiter like `<` `>` `/`
     TSText = { fg = c.pink }, -- For strings considered text in a markup language.
@@ -280,6 +280,7 @@ local set_groups = function()
     LspTroubleText = { fg = c.gray04 },
     LspTroubleCount = { fg = c.pink, bg = c.gray03 },
     LspTroubleNormal = { fg = c.fg, bg = c.bg },
+    --
     -- Diff
     diffAdded = { fg = c.green },
     diffRemoved = { fg = c.red },
@@ -299,19 +300,21 @@ local set_groups = function()
     GitSignsDelete = { fg = c.red }, -- diff mode: Deleted line |diff.txt|
     GitSignsDeleteNr = { fg = c.red }, -- diff mode: Deleted line |diff.txt|
     GitSignsDeleteLn = { fg = c.red }, -- diff mode: Deleted line |diff.txt|
+
     -- Telescope
-    TelescopeNormal = {bg=c.gray02},
+    TelescopeNormal = { bg = c.gray02 },
     TelescopeBorder = { fg = c.gray02 },
     TelescopeSelectionCaret = { fg = c.blue, bg = c.gray03 },
     TelescopeMatching = { fg = c.red },
     TelescopePromptNormal = { bg = c.gray03 },
-    TelescopePromptTitle = { fg = c.magenta},
+    TelescopePromptTitle = { fg = c.magenta },
     TelescopePromptPrefix = { fg = c.blue },
     TelescopePromptBorder = { fg = c.gray03, bg = c.gray03 },
-    TelescopePreviewTitle = { fg = c.magenta},
-    TelescopePreviewBorder = { fg = c.gray02, bg = c.gray02},
+    TelescopePreviewTitle = { fg = c.magenta },
+    TelescopePreviewBorder = { fg = c.gray02, bg = c.gray02 },
     TelescopeResultsTitle = { fg = c.magenta, bg = c.gray02 },
-    TelescopeResultsBorder = { fg = c.gray02, bg = c.gray02},
+    TelescopeResultsBorder = { fg = c.gray02, bg = c.gray02 },
+
     -- NvimTree
     NvimTreeRootFolder = { fg = c.cyan, style = "italic" },
     NvimTreeNormal = { fg = c.fg, bg = cfg.transparent and c.none or c.bg },
@@ -329,6 +332,7 @@ local set_groups = function()
     NvimTreeGitRenamed = { fg = c.yellow },
     NvimTreeGitNew = { fg = c.green },
     NvimTreeGitDeleted = { fg = c.red },
+
     -- Ale-vim
     ALEError = { fg = c.red },
     ALEWarning = { fg = c.yellow },
@@ -339,6 +343,7 @@ local set_groups = function()
     ALEVirtualTextError = { fg = c.red },
     ALEVirtualTextWarning = { fg = c.yellow },
     ALEVirtualTextInfo = { fg = c.blue },
+
     -- WhichKey
     WhichKey = { fg = c.cyan },
     WhichKeyGroup = { fg = c.magenta, style = "italic" },
@@ -346,6 +351,7 @@ local set_groups = function()
     WhichKeySeperator = { fg = c.gray05 },
     WhichKeyFloating = { bg = c.gray01 },
     WhichKeyFloat = { bg = c.gray01 },
+
     -- LspSaga
     LspSagaFinderSelection = { fg = c.pink },
     LspSagaLspFinderBorder = { fg = c.gray05, bg = c.gray01 },
@@ -382,15 +388,19 @@ local set_groups = function()
     LspSagaDiagnosticBorder = { fg = c.gray05 },
     LspSagaDiagnosticHeader = { fg = c.gray06 },
     LspSagaDiagnosticTruncateLine = { fg = c.gray05 },
+
     -- BufferLine
     BufferLineIndicatorSelected = { fg = c.green },
     BufferLineFill = { bg = c.gray03 },
+
     -- Sneak
     Sneak = { fg = c.bg, bg = c.green },
     SneakScope = { bg = c.gray04 },
+
     -- Indent Blankline
     IndentBlanklineChar = { fg = c.gray03 },
     IndentBlanklineContextChar = { fg = c.gray05 },
+
     -- nvim-cmp
     CmpItemAbbrDeprecated = { fg = c.gray05, style = "strikethrough" },
     CmpItemAbbrMatch = { fg = c.blue },
@@ -435,6 +445,7 @@ local set_groups = function()
     MiniStarterItemPrefix = { style = "underline" },
     MiniStarterSelection = { fg = c.magenta },
     MiniStarterQuery = { fg = c.magenta },
+
     -- Custom highlight groups for use in statusline plugins
     StatusLineNormalMode = { fg = c.black, bg = c.gray02 },
     StatusLineInsertMode = { fg = c.black, bg = c.gray03 },
@@ -445,6 +456,7 @@ local set_groups = function()
     StatusLineInfo = { fg = c.blue, bg = c.gray01 },
     StatusLineWarn = { fg = c.yellow, bg = c.gray01 },
     StatusLineError = { fg = c.red, bg = c.gray01 },
+
     -- Hydra
     HydraRed = { fg = c.red },
     HydraBlue = { fg = c.blue },
@@ -452,6 +464,11 @@ local set_groups = function()
     HydraTeal = { fg = c.cyan },
     HydraPink = { fg = c.magenta },
     HydraHint = { fg = c.fg, bg = c.gray02 },
+
+    -- vim-illuminate
+    IlluminatedWordText = {bg = c.gray02},
+    IlluminatedWordRead = {bg = c.gray02},
+    IlluminatedWordWrite = {bg = c.gray02}
   }
 
   for group, parameters in pairs(groups) do
