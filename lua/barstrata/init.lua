@@ -37,7 +37,7 @@ local set_groups = function()
     FloatBorder = { fg = c.blue, bg = c.gray01 },
     ColorColumn = { fg = c.none, bg = c.gray01 }, --  used for the columns set with 'colorcolumn'
     Conceal = { fg = c.gray05 }, -- placeholder characters substituted for concealed text (see 'conceallevel')
-    Cursor = { fg = c.cyan, bg = c.none, style = "reverse" }, -- the character under the cursor
+    Cursor = { fg = c.cyan, bg = c.none }, -- the character under the cursor -- , style = "reverse"
     CursorIM = { fg = c.cyan, bg = c.none, style = "reverse" }, -- like Cursor, but used when in IME mode
     Directory = { fg = c.blue, bg = c.none, style = "bold" }, -- directory names (and other special names in listings)
     DiffAdd = { fg = c.green, bg = c.none, style = "reverse" }, -- diff mode: Added line
@@ -86,7 +86,7 @@ local set_groups = function()
     NormalMode = { fg = c.cyan, bg = c.none, style = "reverse" },
     InsertMode = { fg = c.green, bg = c.none, style = "reverse" },
     VisualMode = { fg = c.cyan, bg = c.none, style = "reverse" },
-    VertSplit = { fg = c.gray03 },
+    VertSplit = { fg = cfg.variant == "darker" and c.bg2 or c.gray03, bg= c.bg2 },
     CommandMode = { fg = c.gray05, bg = c.none, style = "reverse" },
     Warnings = { fg = c.yellow },
     healthError = { fg = c.red },
@@ -106,7 +106,7 @@ local set_groups = function()
     Identifier = { fg = c.blue, bg = c.none }, -- any variable name
     String = { fg = c.cyan, bg = c.none }, -- Any string
     Character = { fg = c.pink }, -- any character constant: 'c', '\n'
-    Number = { fg = c.pink }, -- a number constant: 5
+    Number = { fg = c.cyan }, -- a number constant: 5
     Float = { fg = c.pink }, -- a floating point constant: 2.3e10
     Statement = { fg = c.blue }, -- any statement
     Label = { fg = c.cyan }, -- case, default, etc.
@@ -317,7 +317,7 @@ local set_groups = function()
 
     -- NvimTree
     NvimTreeRootFolder = { fg = c.cyan, style = "italic" },
-    NvimTreeNormal = { fg = c.fg, bg = cfg.transparent and c.none or c.bg },
+    NvimTreeNormal = { fg = c.fg, bg = cfg.transparent and c.none or c.bg2 },
     NvimTreeImageFile = { fg = c.pink },
     NvimTreeExecFile = { fg = c.green },
     NvimTreeSpecialFile = { fg = c.pink },
@@ -466,9 +466,9 @@ local set_groups = function()
     HydraHint = { fg = c.fg, bg = c.gray02 },
 
     -- vim-illuminate
-    IlluminatedWordText = {bg = c.gray02},
-    IlluminatedWordRead = {bg = c.gray02},
-    IlluminatedWordWrite = {bg = c.gray02}
+    IlluminatedWordText = { bg = c.gray02 },
+    IlluminatedWordRead = { bg = c.gray02 },
+    IlluminatedWordWrite = { bg = c.gray02 },
   }
 
   for group, parameters in pairs(groups) do
