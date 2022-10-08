@@ -86,7 +86,8 @@ local set_groups = function()
     NormalMode = { fg = c.cyan, bg = c.none, style = "reverse" },
     InsertMode = { fg = c.green, bg = c.none, style = "reverse" },
     VisualMode = { fg = c.cyan, bg = c.none, style = "reverse" },
-    VertSplit = { fg = cfg.variant == "darker" and c.bg2 or c.gray03, bg= c.bg2 },
+    VertSplit = { fg = cfg.variant == "darker" and c.bg2 or c.gray03, bg = c.bg2 },
+    WinSeparator = { fg = c.bright_pink, bg = c.bg},
     CommandMode = { fg = c.gray05, bg = c.none, style = "reverse" },
     Warnings = { fg = c.yellow },
     healthError = { fg = c.red },
@@ -196,16 +197,16 @@ local set_groups = function()
     TSKeyword = { fg = c.bright_pink, style = cfg.keyword_style }, -- For keywords that don't fall in previous categories.
     TSKeywordFunction = { fg = c.gray06, style = cfg.function_style }, -- For keywords used to define a fuction.
     TSKeywordOperator = { fg = c.gray06 }, -- For operators that are English words, e.g. `and`, `as`, `or`.
-    TSKeywordReturn = { fg = c.blue, style = cfg.keyword_style }, -- For the `return` and `yield` keywords.
+    TSKeywordReturn = { fg = c.pink, style = cfg.keyword_style }, -- For the `return` and `yield` keywords.
     TSLabel = { fg = c.cyan }, -- For labels: `label:` in C and `:label:` in Lua.
-    TSMethod = { fg = c.blue, style = cfg.function_style }, -- For method calls and definitions.
+    TSMethod = { fg = c.teal, style = cfg.function_style }, -- For method calls and definitions.
     TSNamespace = { fg = c.blue }, -- For identifiers referring to modules and namespaces.
     -- TSNone = {}, -- No highlighting. Don't change the values of this highlight group.
     TSNumber = { fg = c.pink }, -- For all numbers
     TSOperator = { fg = c.gray06 }, -- For any operator: `+`, but also `->` and `*` in C.
     TSParameter = { fg = c.fg }, -- For parameters of a function.
     TSParameterReference = { fg = c.fg }, -- For references to parameters of a function.
-    TSProperty = { fg = c.blue }, -- Same as `TSField`.
+    TSProperty = { fg = c.fg }, -- Same as `TSField`.
     TSPunctDelimiter = { fg = c.gray06 }, -- For delimiters ie: `.`
     TSPunctBracket = { fg = c.gray06 }, -- For brackets and parens.
     TSPunctSpecial = { fg = c.pink }, -- For special punctutation that does not fall in the catagories before.
@@ -235,7 +236,7 @@ local set_groups = function()
     TSDanger = { fg = c.red, style = "italic" }, -- Text representation of a danger note.
     TSType = { fg = c.cyan, style = cfg.type_style }, -- For types.
     TSTypeBuiltin = { fg = c.cyan, style = cfg.type_style }, -- For builtin types.
-    TSVariable = { fg = c.fg, style = cfg.variable_style }, -- Any variable name that does not have another highlight.
+    TSVariable = { fg = c.blue, style = cfg.variable_style }, -- Any variable name that does not have another highlight.
     TSVariableBuiltin = { fg = c.pink, style = cfg.variable_style }, -- Variable names that are defined by the languages, like `this` or `self`.
 
     -- highlight groups for the native LSP client

@@ -20,8 +20,10 @@ M.default = {
   cyan = "#7dc2c7",
   white = "#ffffff",
   teal = "#5de4c7",
+  light_pink = "#fabec0", -- From nexxel's website
   bright_pink = "#f087bd",
-  bright_magenta = "#d0679d",
+  bright_magenta = "#F55AD3",
+  -- bright_magenta = "#d0679d",
 
   -- Grays
   gray01 = "#20222d",
