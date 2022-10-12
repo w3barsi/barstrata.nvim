@@ -87,7 +87,7 @@ local set_groups = function()
     InsertMode = { fg = c.green, bg = c.none, style = "reverse" },
     VisualMode = { fg = c.cyan, bg = c.none, style = "reverse" },
     VertSplit = { fg = cfg.variant == "darker" and c.bg2 or c.gray03, bg = c.bg2 },
-    WinSeparator = { fg = c.bright_pink, bg = c.bg},
+    WinSeparator = { fg = c.bright_pink, bg = c.bg },
     CommandMode = { fg = c.gray05, bg = c.none, style = "reverse" },
     Warnings = { fg = c.yellow },
     healthError = { fg = c.red },
@@ -97,14 +97,14 @@ local set_groups = function()
     Type = { fg = c.cyan, stye = cfg.type_style }, -- int, long, char, etc.
     StorageClass = { fg = c.cyan }, -- static, register, volatile, etc.
     Structure = { fg = c.pink }, -- struct, union, enum, etc.
-    Constant = { fg = c.pink }, -- any constant
+    Constant = { fg = c.fg }, -- any constant
     Comment = { fg = c.gray04, bg = c.none, style = cfg.comment_style }, -- italic comments
     Conditional = { fg = c.blue, bg = c.none, style = cfg.keyword_style }, -- italic if, then, else, endif, switch, etc.
     Keyword = { fg = c.blue, bg = c.none, style = cfg.keyword_style }, -- italic for, do, while, etc.
     Repeat = { fg = c.blue, bg = c.none, style = cfg.keyword_style }, -- italic any other keyword
     Boolean = { fg = c.pink, bg = c.none, style = cfg.boolean_style }, -- true , false
     Function = { fg = c.blue, bg = c.none, style = cfg.function_style },
-    Identifier = { fg = c.blue, bg = c.none }, -- any variable name
+    Identifier = { fg = c.blue }, -- any variable name
     String = { fg = c.cyan, bg = c.none }, -- Any string
     Character = { fg = c.pink }, -- any character constant: 'c', '\n'
     Number = { fg = c.cyan }, -- a number constant: 5
@@ -119,7 +119,7 @@ local set_groups = function()
     Macro = { fg = c.blue }, -- same as Define
     Typedef = { fg = c.cyan, style = cfg.type_style }, -- A typedef
     PreCondit = { fg = c.cyan }, -- preprocessor #if, #else, #endif, etc.
-    Special = { fg = c.blue, bg = c.none, "italic" }, -- any special symbol
+    Special = { fg = c.bright_pink, bg = c.none, "italic" }, -- any special symbol
     SpecialChar = { fg = c.pink }, -- special character in a constant
     Tag = { fg = c.red }, -- you can use CTRL-] on this
     Delimiter = { fg = c.gray06 }, -- character that needs attention like , or .
@@ -182,36 +182,36 @@ local set_groups = function()
     TSCharacter = { fg = c.cyan }, -- For characters.
     TSComment = { fg = c.gray05, bg = c.none, style = cfg.comment_style }, -- For comment blocks.
     TSConditional = { fg = c.bright_pink, style = cfg.keyword_style }, -- For keywords related to conditionnals.
-    TSConstant = { fg = c.fg }, -- For constants
-    TSConstBuiltin = { fg = c.pink, style = "italic" }, -- For constants that are built in the language: `nil` in Lua.
+    TSConstant = { link = "Constant" }, -- For constants
+    TSConstBuiltin = { fg = c.fg, style = "italic" }, -- For constants that are built in the language: `nil` in Lua.
     TSConstMacro = { fg = c.cyan }, -- For constants that are defined by macros: `NULL` in C.
     TSConstructor = { fg = c.bright_magenta }, -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
     TSError = { fg = c.red }, -- For syntax/parser errors.
     TSException = { fg = c.green }, -- For exception related keywords.
-    TSField = { fg = c.fg }, -- For fields.
+    TSField = { link = "Identifier" }, -- For fields.
     TSFloat = { fg = c.pink }, -- For floats.
-    TSFunction = { fg = c.blue, style = cfg.function_style }, -- For fuction (calls and definitions).
-    TSFuncBuiltin = { fg = c.blue, style = cfg.function_style }, -- For builtin functions: `table.insert` in Lua.
+    TSFunction = { fg = c.teal, style = cfg.function_style }, -- For fuction (calls and definitions).
+    TSFuncBuiltin = { link = "Special" }, -- For builtin functions: `table.insert` in Lua.
     TSFuncMacro = { fg = c.blue }, -- For macro defined fuctions (calls and definitions): each `macro_rules` in Rust.
     TSInclude = { fg = c.green, style = "italic" }, -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
     TSKeyword = { fg = c.bright_pink, style = cfg.keyword_style }, -- For keywords that don't fall in previous categories.
     TSKeywordFunction = { fg = c.bright_pink, style = cfg.function_style }, -- For keywords used to define a fuction.
-    TSKeywordOperator = { fg = c.gray06 }, -- For operators that are English words, e.g. `and`, `as`, `or`.
-    TSKeywordReturn = { fg = c.green, style = cfg.keyword_style }, -- For the `return` and `yield` keywords.
+    TSKeywordOperator = { fg = c.bright_pink }, -- For operators that are English words, e.g. `and`, `as`, `or`.
+    TSKeywordReturn = { fg = c.bright_pink, style = cfg.keyword_style }, -- For the `return` and `yield` keywords.
     TSLabel = { fg = c.bright_pink }, -- For labels: `label:` in C and `:label:` in Lua.
     TSMethod = { fg = c.teal, style = cfg.function_style }, -- For method calls and definitions.
     TSNamespace = { fg = c.blue }, -- For identifiers referring to modules and namespaces.
     -- TSNone = {}, -- No highlighting. Don't change the values of this highlight group.
     TSNumber = { fg = c.pink }, -- For all numbers
     TSOperator = { fg = c.gray06 }, -- For any operator: `+`, but also `->` and `*` in C.
-    TSParameter = { fg = c.fg }, -- For parameters of a function.
+    TSParameter = { link = "Identifier" }, -- For parameters of a function.
     TSParameterReference = { fg = c.fg }, -- For references to parameters of a function.
-    TSProperty = { fg = c.fg }, -- Same as `TSField`.
+    TSProperty = { link = "Identifier" }, -- Same as `TSField`.
     TSPunctDelimiter = { fg = c.gray06 }, -- For delimiters ie: `.`
     TSPunctBracket = { fg = c.gray06 }, -- For brackets and parens.
     TSPunctSpecial = { fg = c.pink }, -- For special punctutation that does not fall in the catagories before.
     TSRepeat = { fg = c.bright_pink, style = cfg.keyword_style }, -- For keywords related to loops.
-    TSString = { fg = c.cyan }, -- For strings.
+    TSString = { fg = c.teal }, -- For strings.
     TSStringRegex = { fg = c.blue }, -- For regexes.
     TSStringEscape = { fg = c.magenta }, -- For escape characters within a string.
     TSStringSpecial = { fg = c.pink }, -- For strings with special meaning that don't fit into the above categories.
@@ -234,10 +234,10 @@ local set_groups = function()
     TSNote = { fg = c.blue, style = "italic" }, -- Text representation of an informational note.
     TSWarning = { fg = c.yellow, style = "italic" }, -- Text representation of a warning note.
     TSDanger = { fg = c.red, style = "italic" }, -- Text representation of a danger note.
-    TSType = { fg = c.cyan, style = cfg.type_style }, -- For types.
-    TSTypeBuiltin = { fg = c.cyan, style = cfg.type_style }, -- For builtin types.
-    TSVariable = { fg = c.blue, style = cfg.variable_style }, -- Any variable name that does not have another highlight.
-    TSVariableBuiltin = { fg = c.pink, style = cfg.variable_style }, -- Variable names that are defined by the languages, like `this` or `self`.
+    TSType = { fg = c.light_yellow, style = cfg.type_style }, -- For types.
+    TSTypeBuiltin = { link = "TSType" }, -- For builtin types.
+    TSVariable = { fg = c.fg, style = cfg.variable_style }, -- Any variable name that does not have another highlight.
+    TSVariableBuiltin = { link = "TSVariable" }, -- Variable names that are defined by the languages, like `this` or `self`.
 
     -- highlight groups for the native LSP client
     LspReferenceText = { fg = c.bg, bg = c.pink }, -- used for highlighting "text" references
@@ -249,10 +249,10 @@ local set_groups = function()
     DiagnosticWarn = { fg = c.urgent_yellow }, -- base highlight group for "Warning"
     DiagnosticInfo = { fg = c.urgent_green }, -- base highlight group from "Information"
     DiagnosticHint = { fg = c.urgent_blue }, -- base highlight group for "Hint"
-    DiagnosticUnderlineError = { fg = c.urgent_red, style = "undercurl", sp = c.urgent_red }, -- used to underline "Error" diagnostics.
-    DiagnosticUnderlineWarn = { fg = c.urgent_yellow, style = "undercurl", sp = c.urgent_yellow }, -- used to underline "Warning" diagnostics.
-    DiagnosticUnderlineInfo = { fg = c.urgent_green, style = "undercurl", sp = c.urgent_green }, -- used to underline "Information" diagnostics.
-    DiagnosticUnderlineHint = { fg = c.urgent_blue, style = "undercurl", sp = c.urgent_blue }, -- used to underline "Hint" diagnostics.
+    DiagnosticUnderlineError = { style = "undercurl", sp = c.urgent_red }, -- used to underline "Error" diagnostics.
+    DiagnosticUnderlineWarn = { style = "undercurl", sp = c.urgent_yellow }, -- used to underline "Warning" diagnostics.
+    DiagnosticUnderlineInfo = { style = "undercurl", sp = c.urgent_green }, -- used to underline "Information" diagnostics.
+    DiagnosticUnderlineHint = { style = "undercurl", sp = c.urgent_blue }, -- used to underline "Hint" diagnostics.
 
     -- Diagnostics (old)
     LspDiagnosticsDefaultError = { fg = c.red }, -- used for "Error" diagnostic virtual text
@@ -400,7 +400,7 @@ local set_groups = function()
 
     -- Indent Blankline
     IndentBlanklineChar = { fg = c.gray03 },
-    IndentBlanklineContextChar = { fg = c.gray05 },
+    IndentBlanklineContextChar = { fg = c.gray06 },
 
     -- nvim-cmp
     CmpItemAbbrDeprecated = { fg = c.gray05, style = "strikethrough" },
