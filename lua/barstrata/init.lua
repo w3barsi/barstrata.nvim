@@ -112,7 +112,7 @@ local set_groups = function()
     Statement = { fg = c.blue }, -- any statement
     Label = { fg = c.cyan }, -- case, default, etc.
     Operator = { fg = c.gray06 }, -- sizeof", "+", "*", etc.
-    Exception = { fg = c.blue }, -- try, catch, throw
+    Exception = { fg = c.green }, -- try, catch, throw
     PreProc = { fg = c.red }, -- generic Preprocessor
     Include = { fg = c.blue }, -- preprocessor #include
     Define = { fg = c.cyan }, -- preprocessor #define
@@ -185,20 +185,20 @@ local set_groups = function()
     TSConstant = { fg = c.fg }, -- For constants
     TSConstBuiltin = { fg = c.pink, style = "italic" }, -- For constants that are built in the language: `nil` in Lua.
     TSConstMacro = { fg = c.cyan }, -- For constants that are defined by macros: `NULL` in C.
-    TSConstructor = { fg = c.bright_pink }, -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
+    TSConstructor = { fg = c.bright_magenta }, -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
     TSError = { fg = c.red }, -- For syntax/parser errors.
-    TSException = { fg = c.blue }, -- For exception related keywords.
-    TSField = { fg = c.blue }, -- For fields.
+    TSException = { fg = c.green }, -- For exception related keywords.
+    TSField = { fg = c.fg }, -- For fields.
     TSFloat = { fg = c.pink }, -- For floats.
     TSFunction = { fg = c.blue, style = cfg.function_style }, -- For fuction (calls and definitions).
     TSFuncBuiltin = { fg = c.blue, style = cfg.function_style }, -- For builtin functions: `table.insert` in Lua.
     TSFuncMacro = { fg = c.blue }, -- For macro defined fuctions (calls and definitions): each `macro_rules` in Rust.
-    TSInclude = { fg = c.blue, style = "italic" }, -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
+    TSInclude = { fg = c.green, style = "italic" }, -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
     TSKeyword = { fg = c.bright_pink, style = cfg.keyword_style }, -- For keywords that don't fall in previous categories.
-    TSKeywordFunction = { fg = c.gray06, style = cfg.function_style }, -- For keywords used to define a fuction.
+    TSKeywordFunction = { fg = c.bright_pink, style = cfg.function_style }, -- For keywords used to define a fuction.
     TSKeywordOperator = { fg = c.gray06 }, -- For operators that are English words, e.g. `and`, `as`, `or`.
-    TSKeywordReturn = { fg = c.pink, style = cfg.keyword_style }, -- For the `return` and `yield` keywords.
-    TSLabel = { fg = c.cyan }, -- For labels: `label:` in C and `:label:` in Lua.
+    TSKeywordReturn = { fg = c.green, style = cfg.keyword_style }, -- For the `return` and `yield` keywords.
+    TSLabel = { fg = c.bright_pink }, -- For labels: `label:` in C and `:label:` in Lua.
     TSMethod = { fg = c.teal, style = cfg.function_style }, -- For method calls and definitions.
     TSNamespace = { fg = c.blue }, -- For identifiers referring to modules and namespaces.
     -- TSNone = {}, -- No highlighting. Don't change the values of this highlight group.
