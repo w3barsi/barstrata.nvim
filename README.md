@@ -26,6 +26,7 @@ A cold, dark color scheme for Neovim written in Lua forked from [kvrohit/substra
 - [vim-sneak](https://github.com/justinmk/vim-sneak)
 - [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
 - [Hydra](https://github.com/anuvyklack/hydra.nvim)
+- [Lualine](https://github.com/nvim-lualine/lualine.nvim)
 
 ## ⚡️ Requirements
 

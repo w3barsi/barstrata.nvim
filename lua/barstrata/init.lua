@@ -12,7 +12,7 @@ local set_terminal_colors = function()
   vim.g.terminal_color_4 = c.blue
   vim.g.terminal_color_5 = c.magenta
   vim.g.terminal_color_6 = c.cyan
-  vim.g.terminal_color_7 = c.white
+  vim.g.terminal_color_7 = c.fg
   vim.g.terminal_color_8 = c.black
   vim.g.terminal_color_9 = c.red
   vim.g.terminal_color_10 = c.green
@@ -20,7 +20,7 @@ local set_terminal_colors = function()
   vim.g.terminal_color_12 = c.blue
   vim.g.terminal_color_13 = c.magenta
   vim.g.terminal_color_14 = c.cyan
-  vim.g.terminal_color_15 = c.white
+  vim.g.terminal_color_15 = c.fg
   vim.g.terminal_color_background = c.bg
   vim.g.terminal_color_foreground = c.fg
 end
@@ -234,7 +234,7 @@ local set_groups = function()
     TSNote = { fg = c.blue, style = "italic" }, -- Text representation of an informational note.
     TSWarning = { fg = c.yellow, style = "italic" }, -- Text representation of a warning note.
     TSDanger = { fg = c.red, style = "italic" }, -- Text representation of a danger note.
-    TSType = { fg = c.light_yellow, style = cfg.type_style }, -- For types.
+    TSType = { fg = c.orange, style = cfg.type_style }, -- For types.
     TSTypeBuiltin = { link = "TSType" }, -- For builtin types.
     TSVariable = { fg = c.fg, style = cfg.variable_style }, -- Any variable name that does not have another highlight.
     TSVariableBuiltin = { link = "TSVariable" }, -- Variable names that are defined by the languages, like `this` or `self`.
