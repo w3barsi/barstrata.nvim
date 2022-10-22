@@ -175,70 +175,6 @@ local set_groups = function()
     DashboardHeader = { fg = c.pink },
     DashboardCenter = { fg = c.blue },
     DashboardFooter = { fg = c.green, style = "italic" },
-    -- TreeSitter highlight groups
-    TSAnnotation = { fg = c.green }, -- For C++/Dart attributes, annotations that can be attached to the code to denote some kind of meta information.
-    TSAttribute = { fg = c.pink }, -- (unstable) TODO: docs
-    TSBoolean = { fg = c.pink, bg = c.none, style = cfg.boolean_style }, -- true or false
-    TSCharacter = { fg = c.cyan }, -- For characters.
-    TSComment = { fg = c.gray05, bg = c.none, style = cfg.comment_style }, -- For comment blocks.
-    TSConditional = { fg = c.bright_pink, style = cfg.keyword_style }, -- For keywords related to conditionnals.
-    TSConstant = { link = "Constant" }, -- For constants
-    TSConstBuiltin = { fg = c.fg, style = "italic" }, -- For constants that are built in the language: `nil` in Lua.
-    TSConstMacro = { fg = c.cyan }, -- For constants that are defined by macros: `NULL` in C.
-    TSConstructor = { fg = c.bright_magenta }, -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
-    TSError = { fg = c.red }, -- For syntax/parser errors.
-    TSException = { fg = c.green }, -- For exception related keywords.
-    TSField = { link = "Identifier" }, -- For fields.
-    TSFloat = { fg = c.pink }, -- For floats.
-    TSFunction = { fg = c.teal, style = cfg.function_style }, -- For fuction (calls and definitions).
-    TSFuncBuiltin = { link = "Special" }, -- For builtin functions: `table.insert` in Lua.
-    TSFuncMacro = { fg = c.blue }, -- For macro defined fuctions (calls and definitions): each `macro_rules` in Rust.
-    TSInclude = { fg = c.green, style = "italic" }, -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
-    TSKeyword = { fg = c.bright_pink, style = cfg.keyword_style }, -- For keywords that don't fall in previous categories.
-    TSKeywordFunction = { fg = c.bright_pink, style = cfg.function_style }, -- For keywords used to define a fuction.
-    TSKeywordOperator = { fg = c.bright_pink }, -- For operators that are English words, e.g. `and`, `as`, `or`.
-    TSKeywordReturn = { fg = c.bright_pink, style = cfg.keyword_style }, -- For the `return` and `yield` keywords.
-    TSLabel = { fg = c.bright_pink }, -- For labels: `label:` in C and `:label:` in Lua.
-    TSMethod = { fg = c.teal, style = cfg.function_style }, -- For method calls and definitions.
-    TSNamespace = { fg = c.blue }, -- For identifiers referring to modules and namespaces.
-    -- TSNone = {}, -- No highlighting. Don't change the values of this highlight group.
-    TSNumber = { fg = c.pink }, -- For all numbers
-    TSOperator = { fg = c.gray06 }, -- For any operator: `+`, but also `->` and `*` in C.
-    TSParameter = { link = "Identifier" }, -- For parameters of a function.
-    TSParameterReference = { fg = c.fg }, -- For references to parameters of a function.
-    TSProperty = { link = "Identifier" }, -- Same as `TSField`.
-    TSPunctDelimiter = { fg = c.gray06 }, -- For delimiters ie: `.`
-    TSPunctBracket = { fg = c.gray06 }, -- For brackets and parens.
-    TSPunctSpecial = { fg = c.pink }, -- For special punctutation that does not fall in the catagories before.
-    TSRepeat = { fg = c.bright_pink, style = cfg.keyword_style }, -- For keywords related to loops.
-    TSString = { fg = c.teal }, -- For strings.
-    TSStringRegex = { fg = c.blue }, -- For regexes.
-    TSStringEscape = { fg = c.magenta }, -- For escape characters within a string.
-    TSStringSpecial = { fg = c.pink }, -- For strings with special meaning that don't fit into the above categories.
-    TSSymbol = { fg = c.pink }, -- For identifiers referring to symbols or atoms.
-    TSTag = { fg = c.bright_pink }, -- Tags like html tag names.
-    TSTagAttribute = { fg = c.blue, style = "italic" }, -- For html tag attributes.
-    TSTagDelimiter = { fg = c.gray06 }, -- Tag delimiter like `<` `>` `/`
-    TSText = { fg = c.pink }, -- For strings considered text in a markup language.
-    TSStrong = { fg = c.pink, style = "bold" }, -- For text to be represented in bold.
-    TSEmphasis = { fg = c.pink, style = "bold,italic" }, -- For text to be represented with emphasis.
-    TSUnderline = { fg = c.fg, bg = c.none, style = "underline" }, -- For text to be represented with an underline.
-    TSStrike = {}, -- For strikethrough text.
-    TSTitle = { fg = c.fg, bg = c.none, style = "bold" }, -- Text that is part of a title.
-    TSLiteral = { fg = c.fg }, -- Literal text.
-    TSURI = { fg = c.pink }, -- Any URL like a link or email.
-    TSMath = { fg = c.blue }, -- For LaTeX-like math environments.
-    TSTextReference = { fg = c.red }, -- For footnotes, text references, citations.
-    TSEnvironment = { fg = c.blue }, -- For text environments of markup languages.
-    TSEnvironmentName = { fg = c.blue }, -- For the name/the string indicating the type of text environment.
-    TSNote = { fg = c.blue, style = "italic" }, -- Text representation of an informational note.
-    TSWarning = { fg = c.yellow, style = "italic" }, -- Text representation of a warning note.
-    TSDanger = { fg = c.red, style = "italic" }, -- Text representation of a danger note.
-    TSType = { fg = c.orange, style = cfg.type_style }, -- For types.
-    TSTypeBuiltin = { link = "TSType" }, -- For builtin types.
-    TSVariable = { fg = c.fg, style = cfg.variable_style }, -- Any variable name that does not have another highlight.
-    TSVariableBuiltin = { link = "TSVariable" }, -- Variable names that are defined by the languages, like `this` or `self`.
-
     -- highlight groups for the native LSP client
     LspReferenceText = { fg = c.bg, bg = c.pink }, -- used for highlighting "text" references
     LspReferenceRead = { fg = c.bg, bg = c.pink }, -- used for highlighting "read" references
@@ -471,6 +407,75 @@ local set_groups = function()
     IlluminatedWordRead = { bg = c.gray02 },
     IlluminatedWordWrite = { bg = c.gray02 },
   }
+  local treesitter = {
+    ["annotation"] = { fg = c.green }, -- For C++/Dart attributes, annotations that can be attached to the code to denote some kind of meta information.
+    ["attribute"] = { fg = c.pink }, -- (unstable) TODO: docs
+    ["boolean"] = { fg = c.yellow, bg = c.none, style = cfg.boolean_style }, -- true or false
+    ["character"] = { fg = c.cyan }, -- For characters.
+    ["comment"] = { fg = c.gray05, bg = c.none, style = cfg.comment_style }, -- For comment blocks.
+    ["conditional"] = { fg = c.bright_pink, style = cfg.keyword_style }, -- For keywords related to conditionnals.
+    ["constant"] = { link = "Constant" }, -- For constants
+    ["constant.builtin"] = { fg = c.fg, style = "italic" }, -- For constants that are built in the language: `nil` in Lua.
+    ["constant.macro"] = { fg = c.cyan }, -- For constants that are defined by macros: `NULL` in C.
+    ["constructor"] = { fg = c.bright_magenta }, -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
+    ["error"] = { fg = c.red }, -- For syntax/parser errors.
+    ["exception"] = { fg = c.green }, -- For exception related keywords.
+    ["field"] = { link = "Identifier" }, -- For fields.
+    ["float"] = { fg = c.pink }, -- For floats.
+    ["function"] = { fg = c.teal, style = cfg.function_style }, -- For fuction (calls and definitions).
+    ["function.call"] = { link = "@function" },
+    ["function.builtin"] = { link = "Special" }, -- For builtin functions: `table.insert` in Lua.
+    ["function.macro"] = { fg = c.blue }, -- For macro defined fuctions (calls and definitions): each `macro_rules` in Rust.
+    ["include"] = { fg = c.green, style = "italic" }, -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
+    ["keyword"] = { fg = c.bright_pink, style = cfg.keyword_style }, -- For keywords that don't fall in previous categories.
+    ["keyword.function"] = { fg = c.bright_pink, style = cfg.function_style }, -- For keywords used to define a fuction.
+    ["keyword.operator"] = { fg = c.bright_pink }, -- For operators that are English words, e.g. `and`, `as`, `or`.
+    ["keyword.return"] = { fg = c.bright_pink, style = cfg.keyword_style }, -- For the `return` and `yield` keywords.
+    ["label"] = { fg = c.bright_pink }, -- For labels: `label:` in C and `:label:` in Lua.
+    ["method"] = { fg = c.teal, style = cfg.function_style }, -- For method calls and definitions.
+    ["method.call"] = { links = "@method" }, -- For method calls and definitions.
+    ["namespace"] = { fg = c.blue }, -- For identifiers referring to modules and namespaces.
+    -- TSNone = {}, -- No highlighting. Don't change the values of this highlight group.
+    ["number"] = { fg = c.pink }, -- For all numbers
+    ["operator"] = { fg = c.gray06 }, -- For any operator: `+`, but also `->` and `*` in C.
+    ["parameter"] = { link = "Identifier" }, -- For parameters of a function.
+    -- TSParameterReference = { fg = c.fg }, -- For references to parameters of a function.
+    ["property"] = { link = "Identifier" }, -- Same as `TSField`.
+    ["punct.delimiter"] = { fg = c.gray06 }, -- For delimiters ie: `.`
+    ["punct.bracket"] = { fg = c.gray06 }, -- For brackets and parens.
+    ["punct.special"] = { fg = c.pink }, -- For special punctutation that does not fall in the catagories before.
+    ["repeat"] = { fg = c.bright_pink, style = cfg.keyword_style }, -- For keywords related to loops.
+    ["string"] = { fg = c.teal }, -- For strings.
+    ["string.regex"] = { fg = c.blue }, -- For regexes.
+    ["string.escape"] = { fg = c.magenta }, -- For escape characters within a string.
+    ["string.special"] = { fg = c.yellow }, -- For escape characters within a string.
+    ["symbol"] = { fg = c.pink }, -- For identifiers referring to symbols or atoms.
+    ["tag"] = { fg = c.bright_pink }, -- Tags like html tag names.
+    ["tag.attribute"] = { fg = c.blue, style = "italic" }, -- For html tag attributes.
+    ["tag.delimiter"] = { fg = c.gray06 }, -- Tag delimiter like `<` `>` `/`
+    ["text"] = { fg = c.pink }, -- For strings considered text in a markup language.
+    ["text.strong"] = { fg = c.pink, style = "bold" }, -- For text to be represented in bold.
+    ["text.emphasis"] = { fg = c.pink, style = "bold,italic" }, -- For text to be represented with emphasis.
+    ["text.underline"] = { fg = c.fg, bg = c.none, style = "underline" }, -- For text to be represented with an underline.
+    ["text.strike"] = {}, -- For strikethrough text.
+    ["text.title"] = { fg = c.fg, bg = c.none, style = "bold" }, -- Text that is part of a title.
+    ["text.literal"] = { fg = c.fg }, -- Literal text.
+    ["text.uri"] = { fg = c.yellow }, -- Any URL like a link or email.
+    ["text.math"] = { fg = c.blue }, -- For LaTeX-like math environments.
+    ["text.reference"] = { fg = c.red }, -- For footnotes, text references, citations.
+    ["text.environment"] = { fg = c.blue }, -- For text environments of markup languages.
+    ["text.environment.name"] = { fg = c.blue }, -- For the name/the string indicating the type of text environment.
+    ["text.note"] = { fg = c.blue, style = "italic" }, -- Text representation of an informational note.
+    ["text.warning"] = { fg = c.yellow, style = "italic" }, -- Text representation of a warning note.
+    ["text.danger"] = { fg = c.red, style = "italic" }, -- Text representation of a danger note.
+    ["type"] = { fg = c.orange, style = cfg.type_style }, -- For types.
+    ["type.builtin"] = { link = "@type" }, -- For builtin types.
+    ["variable"] = { fg = c.fg, style = cfg.variable_style }, -- Any variable name that does not have another highlight.
+    ["variable.builtin"] = { link = "@variable" }, -- Variable names that are defined by the languages, like `this` or `self`.
+  }
+  for group, parameters in pairs(treesitter) do
+    utils.ts_highlight(group, parameters)
+  end
 
   for group, parameters in pairs(groups) do
     utils.highlight(group, parameters)
