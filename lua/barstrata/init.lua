@@ -86,7 +86,7 @@ local set_groups = function()
     NormalMode = { fg = c.cyan, bg = c.none, style = "reverse" },
     InsertMode = { fg = c.green, bg = c.none, style = "reverse" },
     VisualMode = { fg = c.cyan, bg = c.none, style = "reverse" },
-    VertSplit = { fg = cfg.variant == "darker" and c.bg2 or c.gray03, bg = c.bg2 },
+    VertSplit = { fg = cfg.variant == "default" and c.bg2 or c.gray03, bg = c.bg2 },
     WinSeparator = { fg = c.bright_pink, bg = c.bg },
     CommandMode = { fg = c.gray05, bg = c.none, style = "reverse" },
     Warnings = { fg = c.yellow },

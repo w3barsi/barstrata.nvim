@@ -1,14 +1,15 @@
 # 🏔 Barstrata
+<p align="center">
+Vibrant but dark colorscheme for neovim.<br/>
+</p>
 
-A cold, dark color scheme for Neovim written in Lua forked from [kvrohit/substrata.nvim](https://github.com/kvrohit/substrata.nvim) which was ported from [vim-substrata](https://github.com/arzg/vim-substrata) theme.
+![Barstrata Typescript Preview](https://user-images.githubusercontent.com/40544194/197351333-29a9a3af-fcbc-46f5-8b91-be2f191e3075.png)
+Base code forked from [kvrohit/substrata.nvim](https://github.com/kvrohit/substrata.nvim)
 
 ## ✨ Features
 
-- Supports the latest Neovim `0.5` features like TreeSitter and LSP
+- Supports the latest Neovim features
 - Terminal colors inside Neovim
-- Color themes for terminals:
-  - `alacritty`
-
 
 ### Plugin Support
 
@@ -92,25 +93,19 @@ let g:barstrata_italic_functions = 1
 colorscheme barstrata
 ```
 
-```vim
-" Setting brighter colorscheme variant
-let g:barstrata_variant = "brighter"
-```
 
 
 ## ☑️ Todo
 
 <details>
 <summary>To add examples</summary>
-## Preview
-### Terminal
-### Shell script
-### Markdown
-### YAML
-### Rust
-### HTML
-### CSS
-### JavaScript
+Shell script<br/>
+Markdown<br/>
+YAML<br/>
+Rust<br/>
+HTML<br/>
+CSS<br/>
+JavaScript
 </details>
 
 ##  Extras

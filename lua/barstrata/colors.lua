@@ -2,7 +2,7 @@
 
 local M = {}
 
-M.default = {
+M.test = {
   -- Basic
   bg = "#191c25",
   bg2 = "#191c25",
@@ -42,7 +42,7 @@ M.default = {
   none = "NONE",
 }
 
-M.darker = {
+M.default = {
   -- Basic
   bg = "#111319",
   bg2 = "#0D0E13",
