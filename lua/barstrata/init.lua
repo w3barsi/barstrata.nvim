@@ -239,18 +239,18 @@ local set_groups = function()
     GitSignsDeleteLn = { fg = c.red }, -- diff mode: Deleted line |diff.txt|
 
     -- Telescope
-    TelescopeNormal = { bg = c.gray02 },
-    TelescopeBorder = { fg = c.gray02 },
-    TelescopeSelectionCaret = { fg = c.blue, bg = c.gray03 },
+    TelescopeNormal = { bg = c.bgog },
+    TelescopeBorder = { fg = c.bgog },
+    TelescopeSelectionCaret = { fg = c.blue, bg = c.bgog },
     TelescopeMatching = { fg = c.red },
     TelescopePromptNormal = { bg = c.gray03 },
     TelescopePromptTitle = { fg = c.magenta },
     TelescopePromptPrefix = { fg = c.blue },
     TelescopePromptBorder = { fg = c.gray03, bg = c.gray03 },
     TelescopePreviewTitle = { fg = c.magenta },
-    TelescopePreviewBorder = { fg = c.gray02, bg = c.gray02 },
-    TelescopeResultsTitle = { fg = c.magenta, bg = c.gray02 },
-    TelescopeResultsBorder = { fg = c.gray02, bg = c.gray02 },
+    TelescopePreviewBorder = { fg = c.bgog, bg = c.bgog },
+    TelescopeResultsTitle = { fg = c.magenta, bg = c.bgog },
+    TelescopeResultsBorder = { fg = c.bgog, bg = c.bgog },
 
     -- NvimTree
     NvimTreeRootFolder = { fg = c.cyan, style = "italic" },
@@ -290,22 +290,22 @@ local set_groups = function()
     WhichKeyFloat = { bg = c.gray01 },
 
     -- LspSaga
-    LspSagaFinderSelection = { fg = c.pink },
-    LspSagaLspFinderBorder = { fg = c.gray05, bg = c.gray01 },
-    LspFloatWinNormal = { bg = c.gray01 },
-    LspFloatWinBorder = { fg = c.gray05 },
-    LspSagaBorderTitle = { fg = c.gray06 },
+    DefinitionIcon = { fg = c.gray06 },
+    DiagnosticWarning = { fg = c.yellow },
+    DiagnosticTruncateLine = { fg = c.gray05 },
     TargetWord = { fg = c.cyan },
+    TargetFileName = { fg = c.blue },
+    DiagnosticInformation = { fg = c.blue },
+    SagaShadow = { fg = c.gray05 },
+    ReferencesIcon = { fg = c.gray06 },
     ReferencesCount = { fg = c.gray06 },
     DefinitionCount = { fg = c.gray06 },
-    TargetFileName = { fg = c.blue },
-    DefinitionIcon = { fg = c.gray06 },
-    ReferencesIcon = { fg = c.gray06 },
     ProviderTruncateLine = { fg = c.gray05 },
-    SagaShadow = { fg = c.gray05 },
-    DiagnosticTruncateLine = { fg = c.gray05 },
-    DiagnosticWarning = { fg = c.yellow },
-    DiagnosticInformation = { fg = c.blue },
+    LspSagaFinderSelection = { fg = c.pink },
+    LspFloatWinNormal = { bg = c.gray01 },
+    LspFloatWinBorder = { fg = c.gray05 },
+    LspSagaLspFinderBorder = { fg = c.gray05, bg = c.gray01 },
+    LspSagaBorderTitle = { fg = c.gray06 },
     DefinitionPreviewTitle = { fg = c.gray06 },
     LspSagaShTruncateLine = { fg = c.gray05 },
     LspSagaDocTruncateLine = { fg = c.gray05 },
@@ -406,6 +406,8 @@ local set_groups = function()
     IlluminatedWordText = { bg = c.gray02 },
     IlluminatedWordRead = { bg = c.gray02 },
     IlluminatedWordWrite = { bg = c.gray02 },
+
+    FunctionCalls = { fg = c.teal, style = cfg.function_style },
   }
   local treesitter = {
     ["annotation"] = { fg = c.green }, -- For C++/Dart attributes, annotations that can be attached to the code to denote some kind of meta information.
@@ -423,8 +425,8 @@ local set_groups = function()
     ["field"] = { link = "Identifier" }, -- For fields.
     ["float"] = { fg = c.pink }, -- For floats.
     ["function"] = { fg = c.teal, style = cfg.function_style }, -- For fuction (calls and definitions).
-    ["function.call"] = { link = "@function" },
-    ["function.builtin"] = { link = "Special" }, -- For builtin functions: `table.insert` in Lua.
+    ["function.call"] = {link = "FunctionCalls"},
+    ["function.builtin"] = { fg = c.bright_pink, style = cfg.function_style }, -- For builtin functions: `table.insert` in Lua.
     ["function.macro"] = { fg = c.blue }, -- For macro defined fuctions (calls and definitions): each `macro_rules` in Rust.
     ["include"] = { fg = c.green, style = "italic" }, -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
     ["keyword"] = { fg = c.bright_pink, style = cfg.keyword_style }, -- For keywords that don't fall in previous categories.
@@ -433,7 +435,7 @@ local set_groups = function()
     ["keyword.return"] = { fg = c.bright_pink, style = cfg.keyword_style }, -- For the `return` and `yield` keywords.
     ["label"] = { fg = c.bright_pink }, -- For labels: `label:` in C and `:label:` in Lua.
     ["method"] = { fg = c.teal, style = cfg.function_style }, -- For method calls and definitions.
-    ["method.call"] = { links = "@method" }, -- For method calls and definitions.
+    ["method.call"] = {link = "FunctionCalls"}, -- For method calls and definitions.
     ["namespace"] = { fg = c.blue }, -- For identifiers referring to modules and namespaces.
     -- TSNone = {}, -- No highlighting. Don't change the values of this highlight group.
     ["number"] = { fg = c.pink }, -- For all numbers
