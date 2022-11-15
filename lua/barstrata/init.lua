@@ -343,12 +343,15 @@ local set_groups = function()
     CmpItemAbbrMatch = { fg = c.blue },
     CmpItemAbbrMatchFuzzy = { fg = c.blue },
     CmpItemKindVariable = { fg = c.blue },
+    CmpItemKindSnippet = { fg = c.blue },
     CmpItemKindInterface = { fg = c.blue },
-    CmpItemKindText = { fg = c.blue },
-    CmpItemKindFunction = { fg = c.pink },
-    CmpItemKindMethod = { fg = c.pink },
-    CmpItemKindKeyword = { fg = c.fg },
-    CmpItemKindProperty = { fg = c.fg },
+    CmpItemKindText = { fg = c.teal },
+    CmpItemKindField = { fg = c.blue },
+    CmpItemKindEnum = { fg = c.blue },
+    CmpItemKindFunction = { fg = c.teal },
+    CmpItemKindMethod = { fg = c.teal },
+    CmpItemKindKeyword = { fg = c.bright_pink },
+    CmpItemKindProperty = { fg = c.blue },
     CmpItemKindUnit = { fg = c.fg },
     -- mini.nvim
     MiniStatuslineModeNormal = { fg = c.bg, bg = c.cyan },
@@ -425,7 +428,7 @@ local set_groups = function()
     ["field"] = { link = "Identifier" }, -- For fields.
     ["float"] = { fg = c.pink }, -- For floats.
     ["function"] = { fg = c.teal, style = cfg.function_style }, -- For fuction (calls and definitions).
-    ["function.call"] = {link = "FunctionCalls"},
+    ["function.call"] = { link = "FunctionCalls" },
     ["function.builtin"] = { fg = c.bright_pink, style = cfg.function_style }, -- For builtin functions: `table.insert` in Lua.
     ["function.macro"] = { fg = c.blue }, -- For macro defined fuctions (calls and definitions): each `macro_rules` in Rust.
     ["include"] = { fg = c.green, style = "italic" }, -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
@@ -435,7 +438,7 @@ local set_groups = function()
     ["keyword.return"] = { fg = c.bright_pink, style = cfg.keyword_style }, -- For the `return` and `yield` keywords.
     ["label"] = { fg = c.bright_pink }, -- For labels: `label:` in C and `:label:` in Lua.
     ["method"] = { fg = c.teal, style = cfg.function_style }, -- For method calls and definitions.
-    ["method.call"] = {link = "FunctionCalls"}, -- For method calls and definitions.
+    ["method.call"] = { link = "FunctionCalls" }, -- For method calls and definitions.
     ["namespace"] = { fg = c.blue }, -- For identifiers referring to modules and namespaces.
     -- TSNone = {}, -- No highlighting. Don't change the values of this highlight group.
     ["number"] = { fg = c.pink }, -- For all numbers
