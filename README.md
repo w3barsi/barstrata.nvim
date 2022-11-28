@@ -40,13 +40,13 @@ Install the theme with your preferred package manager:
 [vim-plug](https://github.com/junegunn/vim-plug)
 
 ```vim
-Plug 'kvrohit/barstrata.nvim'
+Plug 'w3barsi/barstrata.nvim'
 ```
 
 [packer](https://github.com/wbthomason/packer.nvim)
 
 ```lua
-use 'kvrohit/barstrata.nvim'
+use 'w3barsi/barstrata.nvim'
 ```
 
 ## 🚀 Usage
